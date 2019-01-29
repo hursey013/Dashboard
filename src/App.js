@@ -1,4 +1,3 @@
-//  React and reactstrap
 import React, { Component } from 'react';
 import {Router, Route} from 'react-enroute';
 
@@ -11,7 +10,6 @@ import NotFound from './components/NotFound';
 import SettingsStore from './stores/SettingsStore';
 
 //  Stylesheets & images
-import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 
 const getHash = hash => {
@@ -48,8 +46,8 @@ class App extends Component {
     //  Add a hash change listener:
     window.addEventListener("hashchange", this.hashChangeHandler);
 
-     //  Add store listeners ... and notify ME of changes
-	    this.settingsListener = SettingsStore.addListener(this._onChange);      
+    //  Add store listeners ... and notify ME of changes
+    this.settingsListener = SettingsStore.addListener(this._onChange);      
   }
 
   componentWillUnmount() {
