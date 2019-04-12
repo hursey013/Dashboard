@@ -64297,11 +64297,14 @@ SUMMARY:Braves game with Epsilon team
 TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR
-`
+`;
 
 class iCalUtils {
 
     GetEventsForToday() {
+
+        //  Our url to fetch:
+        let icalurl = "https://calendar.google.com/calendar/ical/mg8l31ag8ua059trmktgdq6v80%40group.calendar.google.com/private-342fffdc823bfcaea433775659169545/basic.ics";
 
         //  Parse the input data
         let jCalData = new ICAL.Component(ICAL.parse(inputData))
