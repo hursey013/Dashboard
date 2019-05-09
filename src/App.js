@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {Router, Route} from 'react-enroute';
 
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
 //  Components
 import DashboardHome from './components/DashboardHome.react';
 import DashboardSettings from './components/DashboardSettings.react';
@@ -11,6 +13,9 @@ import SettingsStore from './stores/SettingsStore';
 
 //  Stylesheets & images
 import './App.css';
+
+//  Theme(s):
+const defaultTheme = createMuiTheme();
 
 const getHash = hash => {
   if (typeof hash === 'string' && hash.length > 0) {
@@ -58,11 +63,13 @@ class App extends Component {
   render() {
     
     return (
-      <Router {...this.state} coords={this.props.coords}>
-        <Route path="/" component={DashboardHome} />
-        <Route path="/settings" component={DashboardSettings} />
-        <Route path="*" component={NotFound} />
-      </Router>
+      <MuiThemeProvider theme={defaultTheme}>
+        <Router {...this.state} coords={this.props.coords}>
+          <Route path="/" component={DashboardHome} />
+          <Route path="/settings" component={DashboardSettings} />
+          <Route path="*" component={NotFound} />
+        </Router>
+      </MuiThemeProvider>      
     );
   }
 
