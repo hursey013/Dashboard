@@ -1,8 +1,8 @@
 //  React
 import React, { Component } from 'react';
 
+import ReactFitText from 'react-fittext';
 import { withStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 const styles = theme => ({
@@ -12,7 +12,6 @@ const styles = theme => ({
   dashgroup: {
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
-    color: theme.palette.text.secondary,
   },
 });
 
@@ -25,12 +24,43 @@ class DashboardHome extends Component {
     return (
       <div className={classes.root}>
         <Grid container spacing={0}>
+                    
           <Grid item xs={6}>
-            <div className={classes.dashgroup}>Time / Weather</div>
+            <div className={classes.dashgroup}>
+
+              <div>
+                <ReactFitText compressor={0.5}><div>
+                  80&deg;
+                </div></ReactFitText>                                
+              </div>
+              
+              <div>
+                Current weather
+              </div>
+
+              <div>
+                Weekly weather
+              </div>
+
+            </div>
           </Grid>
+
           <Grid item xs={6}>
-            <div className={classes.dashgroup}>Date / Calendar</div>
-          </Grid>          
+            <div className={classes.dashgroup}>
+
+              <div>
+                <ReactFitText compressor={0.5}><div>
+                  10:54am
+                </div></ReactFitText>
+              </div>
+
+              <div>
+                Calendar
+              </div>
+              
+            </div>
+          </Grid>
+
         </Grid>
       </div>
     );
