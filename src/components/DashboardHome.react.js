@@ -1,6 +1,8 @@
 //  React
 import React, { Component } from 'react';
 
+import Checkbox from '@material-ui/core/Checkbox';
+
 import ReactFitText from 'react-fittext';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -24,45 +26,48 @@ class DashboardHome extends Component {
 
     return (
       <div className={classes.root}>
-        <Grid container spacing={0}>
+        
+          <Grid container spacing={0}>
                     
-          <Grid item xs={6}>
-            <div className={classes.dashgroup}>
+            <Grid item xs={6}>
+              <div className={classes.dashgroup}>
 
-              <div>
-                <ReactFitText compressor={0.5}><div>
-                  80&deg;
-                </div></ReactFitText>                                
-              </div>
-              
-              <div>
-                Current weather
-              </div>
+                <div>
+                  <ReactFitText compressor={0.5}><div>
+                    Left
+                  </div></ReactFitText>                                
+                </div>
+                
+                <div>
+                  Current weather
+                  <Checkbox defaultChecked />
+                </div>
 
-              <div>
-                Weekly weather
-              </div>
+                <div>
+                  Weekly weather
+                </div>
 
-            </div>
+              </div>
+            </Grid>
+
+            <Grid item xs={6}>
+              <div className={classes.dashgroup}>
+
+                <div>
+                  <ReactFitText compressor={0.5}><div>
+                    Right
+                  </div></ReactFitText>
+                </div>
+
+                <div>
+                  Calendar
+                </div>
+                
+              </div>
+            </Grid>
+
           </Grid>
-
-          <Grid item xs={6}>
-            <div className={classes.dashgroup}>
-
-              <div>
-                <ReactFitText compressor={0.5}><div>
-                  10:54am
-                </div></ReactFitText>
-              </div>
-
-              <div>
-                Calendar
-              </div>
-              
-            </div>
-          </Grid>
-
-        </Grid>
+        
       </div>
     );
   }

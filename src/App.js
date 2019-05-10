@@ -15,7 +15,20 @@ import SettingsStore from './stores/SettingsStore';
 import './App.css';
 
 //  Theme(s):
-const defaultTheme = createMuiTheme();
+const defaultTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#0b5994',
+    },
+    secondary: {
+      main: '#1d83c6',
+    },
+    background: {
+      default: "#000",      
+    },
+    type: 'dark',
+  },
+});
 
 const getHash = hash => {
   if (typeof hash === 'string' && hash.length > 0) {
@@ -52,7 +65,10 @@ class App extends Component {
     window.addEventListener("hashchange", this.hashChangeHandler);
 
     //  Add store listeners ... and notify ME of changes
-    this.settingsListener = SettingsStore.addListener(this._onChange);      
+    this.settingsListener = SettingsStore.addListener(this._onChange);
+
+    //  Set the body background color:
+    document.body.style.background = "#000";
   }
 
   componentWillUnmount() {
@@ -68,8 +84,8 @@ class App extends Component {
           <Route path="/" component={DashboardHome} />
           <Route path="/settings" component={DashboardSettings} />
           <Route path="*" component={NotFound} />
-        </Router>
-      </MuiThemeProvider>      
+        </Router>            
+      </MuiThemeProvider>
     );
   }
 
