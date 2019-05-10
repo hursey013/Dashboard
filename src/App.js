@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Router, Route} from 'react-enroute';
 
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 
 //  Components
 import DashboardHome from './components/DashboardHome.react';
@@ -65,10 +65,7 @@ class App extends Component {
     window.addEventListener("hashchange", this.hashChangeHandler);
 
     //  Add store listeners ... and notify ME of changes
-    this.settingsListener = SettingsStore.addListener(this._onChange);
-
-    //  Set the body background color:
-    document.body.style.background = "#000";
+    this.settingsListener = SettingsStore.addListener(this._onChange);    
   }
 
   componentWillUnmount() {

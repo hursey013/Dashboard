@@ -16,9 +16,19 @@ const styles = theme => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
+  bodybackground: {
+    backgroundColor: theme.palette.background.default,
+  }
 });
 
 class DashboardHome extends Component {  
+
+  componentDidMount() {
+    const { classes } = this.props;
+
+    //  Set the body background color:
+    document.body.className = classes.bodybackground;
+  }
 
   render() {
 
