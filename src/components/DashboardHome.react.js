@@ -1,8 +1,6 @@
 //  React
 import React, { Component } from 'react';
 
-import Checkbox from '@material-ui/core/Checkbox';
-
 import ReactFitText from 'react-fittext';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -50,11 +48,26 @@ class DashboardHome extends Component {
                 
                 <div>
                   Current weather
-                  <Checkbox defaultChecked />
+                  
                 </div>
 
                 <div>
                   Weekly weather
+
+                  <table>
+                    <tbody>
+                      <tr className="forcast-datarow">
+                        <td className="forecast-icon">Icon</td>
+                        <td>
+                          Day<br/>
+                          <span className="forcast-summary">Summary</span>            
+                        </td>
+                        <td className="forecast-temp">Low / Hi</td>
+                        <td className="forecast-moon">Moon phase</td>
+                        <td className="forecast-pollen">Pollen</td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
 
               </div>

@@ -1,3 +1,74 @@
 .App {
   text-align: center;
 }
+
+/* Weather display */
+#temp{
+  font-size: 13em;
+  text-align: center;
+}
+
+#summary{
+  font-size: 2.5em;
+  text-align: center;
+}
+
+#extended-summary {
+  font-size: 2.50em;
+  text-align: center;
+}
+
+#sunrise-sunset{
+  font-size: 2.50em;
+  text-align: center; 
+}
+
+#pollen-summary{
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+#forcast{
+  font-size: 2em;
+}
+
+.forecast-icon{
+  vertical-align: middle !important;
+  font-size: 1.5em;
+  width: 1em;
+}
+
+.forecast-temp{
+  vertical-align: middle !important;
+  font-size: 1.5em;
+}
+
+.forecast-moon{
+  vertical-align: middle !important;
+  color: #ffff99;
+}
+
+.forecast-pollen{
+  vertical-align: middle !important;
+  font-size: 1em;
+}
+
+.forcast-summary{
+  font-size: .7em;
+}
+
+.forecast-alert-title{
+ font-size: 2em; 
+}
+
+.temp-pixel-pad{
+  display: inline-block;
+}
+
+.temp-pixel{
+  width: 2px;
+  height: 35px;
+  display: inline-block;
+  vertical-align: middle;
+}
