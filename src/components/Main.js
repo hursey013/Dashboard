@@ -1,9 +1,16 @@
 //  React
 import React, { Component } from 'react';
 
+//  Components
 import ReactFitText from 'react-fittext';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+
+//  Stores
+import NewsStore from './../stores/NewsStore';
+
+//  Utils:
+import NewsAPIUtils from './../utils/NewsAPIUtils';
 
 const styles = theme => ({
   root: {
@@ -19,13 +26,46 @@ const styles = theme => ({
   }
 });
 
-class DashboardHome extends Component {  
+class Main extends Component {  
+
+  constructor(){
+    super();
+
+      this.state = {
+        NewsData: NewsStore.getNews(),
+        WeatherData: [],
+        PollenData: [],
+        CalendarData: [],
+        QuakeData: [],
+      };
+  }
+
+  //  Time passed - refresh data
+  tick = () => {
+    try
+    {
+      //  Refresh data
+    }
+    catch(ex) 
+    { 
+      //  Log exceptions here
+    }
+  }
 
   componentDidMount() {
     const { classes } = this.props;
 
     //  Set the body background color:
     document.body.className = classes.bodybackground;
+
+    //  Kick off the initial check
+    NewsAPIUtils.checkForTwitterNews();
+
+    //  Add an interval tick for every 5 minutes:
+    this.interval = setInterval(this.tick, 300000);
+
+    //  Add store listeners ... and notify ME of changes
+    this.authListener = NewsStore.addListener(this._onChange);
   }
 
   render() {
@@ -94,6 +134,11 @@ class DashboardHome extends Component {
       </div>
     );
   }
+
+  //  'change' event
+  _onChange = (e) => {
+    
+  }
 }
 
-export default withStyles(styles)(DashboardHome);
+export default withStyles(styles)(Main);

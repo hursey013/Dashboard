@@ -1,15 +1,12 @@
-import NewsActions from '../actions/NewsActions';
+import NewsActions from './../actions/NewsActions';
 
 class NewsAPIUtils {
 
-    getTwitterFeed(user) {
+    checkForTwitterNews(user) {
 
         //  The base url for the service - change this to your service location:
-        //  You can get this microservice for free at https://github.com/danesparza/twitter-breaking-news
-        var baseurl = "https://xcktpgt8r4.execute-api.us-east-1.amazonaws.com/v1/";
-
-        //  Get the news using the given user's screen name
-        var url = baseurl + user;
+        //  You can get this lambda method for free at https://github.com/danesparza/breakingnews
+        let url = "https://api.daydash.net/v1/news";
 
         fetch(url, {mode: 'cors'})
         .then(

@@ -4,16 +4,13 @@ import * as Sentry from '@sentry/browser';
 //  Actions
 import WeatherActions from '../actions/WeatherActions';
 
-//  The stores
-import SettingsStore from '../stores/SettingsStore';
-
 class WeatherAPIUtils {
 
     /* Get the current weather for the given coordiates */
     getWeatherForecast(latitude, longitude) {
 
         //  The base url for the service - change this to your service location:
-        let url = "https://qb9uu1nz2b.execute-api.us-east-1.amazonaws.com/v1/weather";
+        let url = "https://api.daydash.net/v1/weather";
 
         let apiHeaders = new Headers({
             "Content-Type": "application/json; charset=UTF-8",

@@ -10,7 +10,7 @@ class NewsStore extends Store {
     this.newsdata = [];
   }
 
-  getBreakingNews() {
+  getNews() {
     return this.newsdata;
   }
 

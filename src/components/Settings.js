@@ -1,7 +1,7 @@
 //  React
 import React, { Component } from 'react';
 
-class DashboardSettings extends Component {  
+class Settings extends Component {  
 
   render() {
 
@@ -13,4 +13,4 @@ class DashboardSettings extends Component {
   }
 }
 
-export default DashboardSettings;
+export default Settings;
