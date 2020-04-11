@@ -6,7 +6,7 @@ class NewsDisplay extends Component{
   render() {
 
     //  First, see if we have an item to display.
-    if(this.props.news.length < 1) {
+    if(this.props.news == null || this.props.news.length < 1) {
       return null;
     }
 

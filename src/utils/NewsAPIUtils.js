@@ -22,6 +22,10 @@ class NewsAPIUtils {
 
                 // Receive data
                 response.json().then(function (data) {
+                    if(data == null) {
+                        Sentry.captureMessage('News data is null and should not be');
+                    }
+                    
                     //	Call the action to receive the data:
                     NewsActions.recieveNewsData(data);
                 });
